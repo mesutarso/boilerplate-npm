@@ -1,5 +1,6 @@
 {
   "name": "fcc-learn-npm-package-json",
+  "author": "Mechack Tambwe",
   "dependencies": {
     "express": "^4.14.0"
   },
@@ -7,7 +8,7 @@
   "scripts": {
     "start": "node server.js"
   },
-  "author": "Mechack Tambwe",
+  
   "repository": {
     "type": "git",
     "url": "https://github.com/freeCodeCamp/boilerplate-npm.git"
