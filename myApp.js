@@ -9,10 +9,6 @@ let publicPath = __dirname + "/public";
 app.use(bodyParser.urlencoded({ extended: false }));
 
 //Challenge 7 - root-level request logger middleware
-app.use(function (req, res, next) {
-  console.log(`${req.method} ${req.path} - ${req.ip} `);
-  next();
-});
 
 app.use(express.static(publicPath));
 
