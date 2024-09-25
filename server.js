@@ -9,6 +9,11 @@ var fs = require("fs");
 var express = require("express");
 var app = express();
 
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.path} - ${req.ip}`);
+  next();
+});
+
 if (!process.env.DISABLE_XORIGIN) {
   app.use(function (req, res, next) {
     var allowedOrigins = [
@@ -27,14 +32,8 @@ if (!process.env.DISABLE_XORIGIN) {
     next();
   });
 }
-app.use(function (req, res, next) {
-  console.log(`${req.method} ${req.path} - ${req.ip}`);
-  next();
-});
 
 app.use("/public", express.static(process.cwd() + "/public"));
-
-
 
 app.route("/_api/package.json").get(function (req, res, next) {
   console.log("requested");
