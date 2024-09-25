@@ -59,7 +59,8 @@ app.use(function (err, req, res, next) {
 });
 
 app.use(function middleware(req, res, next) {
-  const string = `${req.method} ${req.path}-${req.ip}`;
+  const logs = `${req.method} ${req.path}-${req.ip}`;
+  console.log(logs);
   next();
 });
 
