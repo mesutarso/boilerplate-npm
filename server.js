@@ -27,13 +27,14 @@ if (!process.env.DISABLE_XORIGIN) {
     next();
   });
 }
+app.use(function (req, res, next) {
+  console.log(`${req.method} ${req.path} - ${req.ip}`);
+  next();
+});
 
 app.use("/public", express.static(process.cwd() + "/public"));
 
-app.use(function (req, res, next) {
-  console.log(`${req.method} ${req.path} - ${req.ip} `);
-  next();
-});
+
 
 app.route("/_api/package.json").get(function (req, res, next) {
   console.log("requested");
