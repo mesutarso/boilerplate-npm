@@ -1,6 +1,6 @@
 {
 	"name": "fcc-learn-npm-package-json",
-  "author": "Mechack Tambwe",
+  "author": "Mechack",
 	"dependencies": {
 		"express": "^4.14.0"
 	},
